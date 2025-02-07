@@ -1,0 +1,127 @@
+body {
+    background: #0d162c;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* Contenedor de estrellas */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+/* Estilo de las estrellas */
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 1.5s infinite alternate;
+}
+
+/* Animación de parpadeo */
+@keyframes twinkle {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+/* Contenedor de linternas */
+.lantern-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Linterna */
+.lantern {
+    position: absolute;
+    top: -10vh;
+    width: 50px;
+    opacity: 0.8;
+    animation: floatLantern 8s linear infinite;
+}
+
+/* Animación de linternas */
+@keyframes floatLantern {
+    from { transform: translateY(0) scale(0.8); opacity: 1; }
+    to { transform: translateY(120vh) scale(1.2); opacity: 0.5; }
+}
+
+/* Contenedor principal */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 2s ease-in-out;
+    z-index: 2;
+}
+
+h1 {
+    color: #ffcccb;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Imagen del sol */
+.sun {
+    width: 150px;
+    height: auto;
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Contenedor de botones */
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin: 20px auto;
+}
+
+/* Botón "Sí" */
+#yes {
+    background: #ff4b5c;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+#yes:hover {
+    background: #e04352;
+}
+
+/* Botón "No" ahora solo se mueve, pero no desaparece */
+#no {
+    background: #555;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+}
